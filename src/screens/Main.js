@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 import Card from '../components/Card';
-import { deviceHeight, deviceWidth } from '../styles/common';
+import Button from '../components/Button';
+import { styles } from '../styles/common';
 import {
   INIT_BOARD,
   INIT_STEPS_ATTEMPS,
@@ -119,6 +121,10 @@ const Main = () => {
     else setSecond(selectionObj);
   };
 
+  const handleRestart = () => {
+    initialiseGame();
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.gridOutline}>
@@ -134,6 +140,7 @@ const Main = () => {
         <Text style={styles.steps}>Steps: {attempts}</Text>
         <Text style={styles.matches}>Matches: {matches}</Text>
       </View>
+      <Button title="Restart" onPress={handleRestart} />
     </SafeAreaView>
   );
 };
@@ -159,38 +166,5 @@ const CardsContainer = ({
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#e5e5e5',
-    width: deviceWidth,
-    borderWidth: 1,
-    margin: 'auto'
-  },
-  gridOutline: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    width: '100%',
-    paddingHorizontal: 20,
-    maxWidth: 600,
-    justifyContent: 'space-between'
-  },
-  scoreContainer: {
-    marginTop: 8,
-    flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'space-evenly'
-  },
-  steps: {
-    fontSize: 20
-  },
-  matches: {
-    fontSize: 20
-  }
-});
 
 export default Main;
