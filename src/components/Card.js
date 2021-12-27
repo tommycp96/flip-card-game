@@ -1,12 +1,8 @@
 import React, { useRef } from 'react';
 import { StyleSheet, Text, TouchableOpacity, Animated } from 'react-native';
+import { colors } from '../styles/common';
 
 const Card = ({ char, onPress, index, isMatched, isShow }) => {
-  /*
-    TODO - add flip card animation using https://reactnative.dev/docs/animated 
-    will be better if we can use https://github.com/software-mansion/react-native-reanimated instead
-    however, won't use 3rd party library for this assigment
-  */
   const flipAnimation = useRef(new Animated.Value(0)).current;
   let flipRotation = 0;
   flipAnimation.addListener(({ value }) => (flipRotation = value));
@@ -50,7 +46,10 @@ const Card = ({ char, onPress, index, isMatched, isShow }) => {
   };
 
   const flipCard = () => {
-    return !!flipRotation ? flipToBack() : flipToFront();
+    if (!isMatched) {
+      flipAnimation.setValue(0);
+      !!flipRotation ? flipToBack() : flipToFront();
+    }
   };
 
   const handlePress = () => {
@@ -71,7 +70,8 @@ const Card = ({ char, onPress, index, isMatched, isShow }) => {
         style={{
           ...styles.card,
           ...flipToFrontStyle,
-          backgroundColor: !isMatched && !isShow ? '#4fc3f7' : '#fff'
+          backgroundColor:
+            !isMatched && !isShow ? colors.primary : colors.secondary
         }}
       >
         {cardTextValue()}
@@ -81,7 +81,8 @@ const Card = ({ char, onPress, index, isMatched, isShow }) => {
           ...styles.card,
           ...styles.cardBack,
           ...flipToBackStyle,
-          backgroundColor: !isMatched && !isShow ? '#4fc3f7' : '#fff'
+          backgroundColor:
+            !isMatched && !isShow ? colors.primary : colors.secondary
         }}
       >
         {cardTextValue()}
@@ -107,12 +108,12 @@ const styles = StyleSheet.create({
     minHeight: 100,
     shadowColor: '#000',
     shadowOffset: {
-      width: 0,
+      width: 2,
       height: 4
     },
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
-    elevation: 4,
+    elevation: 8,
     backfaceVisibility: 'hidden'
   },
   cardBack: {

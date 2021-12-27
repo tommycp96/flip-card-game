@@ -135,7 +135,7 @@ const Main = () => {
         <Text style={styles.steps}>Steps: {attempts}</Text>
         <Text style={styles.matches}>Matches: {matches}</Text>
       </View>
-      <Button title="Restart" onPress={handleRestart} />
+      <Button title="RESTART" onPress={handleRestart} />
     </SafeAreaView>
   );
 };

@@ -5,7 +5,7 @@ import { styles } from '../styles/common';
 const Button = ({ title, onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={{ fontSize: 20 }}>{title}</Text>
+      <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{title}</Text>
     </TouchableOpacity>
   );
 };
