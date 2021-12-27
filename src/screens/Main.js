@@ -76,13 +76,8 @@ const Main = () => {
 
   const evaluate = () => {
     if (second) {
-      console.log('🚀 ~ file: Main.js ~ line 74 ~ evaluate ~ first', first);
-      console.log('🚀 ~ file: Main.js ~ line 75 ~ evaluate ~ second', second);
       const doesMatch = first.value === second.value;
-      console.log(
-        '🚀 ~ file: Main.js ~ line 75 ~ evaluate ~ doesMatch',
-        doesMatch
-      );
+
       if (doesMatch) setMatches(mat => ++mat);
       setAttempts(att => ++att);
 

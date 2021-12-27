@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "minHeight": 100,
+      "opacity": 1,
+      "width": "24%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backfaceVisibility": "hidden",
+        "backgroundColor": "#4fc3f7",
+        "borderRadius": 8,
+        "elevation": 4,
+        "justifyContent": "center",
+        "marginBottom": 8,
+        "minHeight": 100,
+        "padding": 8,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 4,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2.22,
+        "transform": Array [
+          Object {
+            "rotateY": "0deg",
+          },
+        ],
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 20,
+        }
+      }
+    >
+      ?
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backfaceVisibility": "hidden",
+        "backgroundColor": "#4fc3f7",
+        "borderRadius": 8,
+        "elevation": 4,
+        "justifyContent": "center",
+        "marginBottom": 8,
+        "minHeight": 100,
+        "padding": 8,
+        "position": "absolute",
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 4,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2.22,
+        "top": 0,
+        "transform": Array [
+          Object {
+            "rotateY": "180deg",
+          },
+        ],
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 20,
+        }
+      }
+    >
+      ?
+    </Text>
+  </View>
+</View>
+`;
